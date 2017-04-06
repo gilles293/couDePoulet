@@ -31,9 +31,9 @@
  We have disabled the internal pull-ups used by the Wire library in the Wire.h/twi.c utility file.
  We are also using the 400 kHz fast I2C mode by setting the TWI_FREQ  to 400000L /twi.h utility file.
  */
-//#include "Wire.h"   
-#include <i2c_t3.h>
-#include <SPI.h>
+#include "Wire.h"   
+//#include <i2c_t3.h>
+//#include <SPI.h>
 
 // See also MPU-9250 Register Map and Descriptions, Revision 4.0, RM-MPU-9250A-00, Rev. 1.4, 9/9/2013 for registers not listed in 
 // above document; the MPU9250 and MPU9150 are virtually identical but the latter has a different register map
@@ -203,6 +203,7 @@ int myLed = 13;
 
 void setup()
 {
+
   Wire.begin();
   Serial.begin(115200);
   delay(4000);
